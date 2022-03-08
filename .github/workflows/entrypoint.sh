@@ -37,16 +37,11 @@ git config --global user.email "sysadmin@flathub.org"
 mkdir flathub
 cd flathub
 
-gh-ls-org flathub | parallel "git clone --depth 1 {}"
-mapfile -t checker_apps < <( grep -rl -E 'extra-data|x-checker-data|\.AppImage' | cut -d/ -f1 | sort -u )
+git clone "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
 
-for repo in ${checker_apps[@]}; do
-    manifest=$(detect_manifest $repo)
-    if [[ -n $manifest ]]; then
-        echo "==> checking ${repo}"
-        /app/flatpak-external-data-checker --verbose --update $repo/$manifest
-    fi
-done
+echo "==> checking ${repo}"
+/app/flatpak-external-data-checker --verbose --update $GITHUB_REPOSITORY/$manifest
+
 
 echo $checker_apps
 echo "end of action"

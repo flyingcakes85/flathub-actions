@@ -16,9 +16,7 @@ jobs:
   flathub-data-checker:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: "true"
     - uses: ./.github/workflows/
       env:
         GITHUB_TOKEN: ${{ secrets.FLATHUBBOT_TOKEN }}
+        MANIFEST: "org.kde.kdiff3.json"
