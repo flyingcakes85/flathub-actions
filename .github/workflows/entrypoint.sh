@@ -37,6 +37,6 @@ git config --global user.email "sysadmin@flathub.org"
 echo "==> checking ${repo}"
 /app/flatpak-external-data-checker --verbose --update $MANIFEST
 
-
+echo $GITHUB_TOKEN
 echo $checker_apps
 echo "end of action"
