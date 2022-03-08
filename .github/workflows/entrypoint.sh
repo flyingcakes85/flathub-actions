@@ -34,13 +34,8 @@ detect_manifest() {
 git config --global user.name "flathubbot" && \
 git config --global user.email "sysadmin@flathub.org"
 
-mkdir flathub
-cd flathub
-
-git clone "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
-
 echo "==> checking ${repo}"
-/app/flatpak-external-data-checker --verbose --update $GITHUB_REPOSITORY/$manifest
+/app/flatpak-external-data-checker --verbose --update $MANIFEST
 
 
 echo $checker_apps
