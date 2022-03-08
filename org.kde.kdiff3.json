@@ -1,4 +1,4 @@
- {
+{
     "id": "org.kde.kdiff3",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.15-21.08",
@@ -10,7 +10,6 @@
         "--socket=fallback-x11",
         "--socket=wayland"
     ],
-
     "modules": [
         "boost.json",
         {
@@ -19,8 +18,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/kdiff3/kdiff3-1.9.2.tar.xz",
-                    "sha256": "f1775f1ca501080363707b2923d493fc314ae4f0b00b172d4cad9b4d3cc2d805",
+                    "url": "https://download.kde.org/stable/kdiff3/kdiff3-1.9.5.tar.xz",
+                    "sha256": "083721596d9d4373bc2f1298394a8ddb5b55a7ad4d7242933a7cd8ae64683c1a",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://download.kde.org/stable/kdiff3",
